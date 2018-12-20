@@ -1,0 +1,41 @@
+
+1. SELECT * FROM users
+
+LEFT JOIN friendships on users.id = friendships.friend_1_id
+
+LEFT JOIN users as user2 ON user2.id = friendships.friend_2_id
+
+WHERE user2.first_name = "Kermit"
+
+2.SELECT COUNT(*) FROM friendships
+
+3.SELECT COUNT(*) FROM friendships
+
+LEFT JOIN users on users.id = friendships.friend_1_id
+
+WHERE users.first_name = "Amy"
+
+4.INSERT INTO users (first_name, last_name)
+
+VALUES ('Dylan', 'Thierbach')
+INSERT INTO friendships (friend_1_id, friend_2_id)
+
+VALUES (7, 2), (7, 4), (7, 5)
+
+5.SELECT user2.first_name as friend_first_name, user2.last_name as friend_last_name FROM users
+
+LEFT JOIN friendships on users.id = friendships.friend_1_id
+
+LEFT JOIN users as user2 ON user2.id = friendships.friend_2_id
+
+WHERE users.id = 2
+
+ORDER BY friend_first_name
+
+6.DELETE FROM friendships
+
+WHERE friend_1_id = 2 and friend_2_id = 5
+
+7.SELECT users.first_name, users.last_name, user2.first_name as friend_first_name, user2.last_name as friend_last_name FROM users
+LEFT JOIN friendships on users.id = friendships.friend_1_id
+LEFT JOIN users as user2 ON user2.id = friendships.friend_2_id
